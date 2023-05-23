@@ -5,6 +5,7 @@ import com.example.library.repository.BookRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BookService {
@@ -22,4 +23,19 @@ public class BookService {
     public Book save(Book book) {
         return book;
     }
+
+    public Optional<Object> findById(Long id) {
+        Optional<Object> o = Optional.empty();
+        return o;
+    }
+
+    public Optional<Object> update(Long id, Book updatedBook) {
+        Optional<Object> o = Optional.empty();
+        return o;
+    }
+
+    public void delete(Long id) {
+
+    }
+
 }
