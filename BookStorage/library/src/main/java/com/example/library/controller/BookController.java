@@ -61,7 +61,7 @@ public class BookController {
     // Könyv adatainak lekérése
     /**
      * Ez az osztály a Spring Security beállításait konfigurálja.
-     * Az @EnableWebSecurity annotációval jelöljük, hogy ezt az osztályt
+     * annotációval jelöljük, hogy ezt az osztályt
      * használjuk a biztonsági konfigurációhoz.
      */
 
@@ -76,7 +76,7 @@ public class BookController {
     // Könyv adatainak frissítése
     /**
      * Ez az osztály a Spring Security beállításait konfigurálja.
-     * Az @EnableWebSecurity annotációval jelöljük, hogy ezt az osztályt
+     * annotációval jelöljük, hogy ezt az osztályt
      * használjuk a biztonsági konfigurációhoz.
      */
 

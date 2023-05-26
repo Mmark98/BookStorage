@@ -1,10 +1,5 @@
 package com.example.library.model;
 
-/*import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;*/
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -29,37 +24,26 @@ public class Book {
     private String author;
     private Object isbn;
 
-    public Book(String title, String author) {
-        this.title = title;
-        this.author = author;
-    }
-
     public Book() {
 
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long id) {this.id = id;
     }
 
-    public Long getId() {
-        return id;
+    public Long getId() {return id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getTitle() {return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTitle(String title) {this.title = title;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getAuthor() {return author;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setAuthor(String author) {this.author = author;
     }
 
     @Override
@@ -77,7 +61,6 @@ public class Book {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Book book = (Book) o;
-        Object isbn = null;
         return Objects.equals(id, book.id) &&
                 Objects.equals(title, book.title) &&
                 Objects.equals(author, book.author) &&
@@ -89,12 +72,13 @@ public class Book {
         return Objects.hash(id, title, author, isbn);
     }
 
-    public void setIsbn(String s) {
-    }
-
     public short getIsbn() {
         int i = 0;
         return (short) i;
+    }
+
+    public void setIsbn(String s) {
+
     }
 }
 

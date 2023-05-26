@@ -2,7 +2,7 @@ package com.example.library.exception;
 
 /**
  * Ez az osztály a Spring Security beállításait konfigurálja.
- * Az @EnableWebSecurity annotációval jelöljük, hogy ezt az osztályt
+ * annotációval jelöljük, hogy ezt az osztályt
  * használjuk a biztonsági konfigurációhoz.
  */
 
