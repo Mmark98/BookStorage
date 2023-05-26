@@ -11,8 +11,20 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Ez az osztály a Spring Security beállításait konfigurálja.
+ * Az @EnableWebSecurity annotációval jelöljük, hogy ezt az osztályt
+ * használjuk a biztonsági konfigurációhoz.
+ */
+
 @ControllerAdvice
 public class GlobalExceptionHandler {
+
+    /**
+     * Ez az osztály a Spring Security beállításait konfigurálja.
+     * Az @EnableWebSecurity annotációval jelöljük, hogy ezt az osztályt
+     * használjuk a biztonsági konfigurációhoz.
+     */
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<Map<String, String>> handleValidationExceptions(

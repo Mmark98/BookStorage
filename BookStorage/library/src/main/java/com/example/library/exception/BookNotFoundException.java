@@ -1,5 +1,11 @@
 package com.example.library.exception;
 
+/**
+ * Ez az osztály a Spring Security beállításait konfigurálja.
+ * Az @EnableWebSecurity annotációval jelöljük, hogy ezt az osztályt
+ * használjuk a biztonsági konfigurációhoz.
+ */
+
 public class BookNotFoundException extends RuntimeException {
 
     public BookNotFoundException(String id) {

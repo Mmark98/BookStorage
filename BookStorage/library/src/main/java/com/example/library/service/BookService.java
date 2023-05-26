@@ -7,6 +7,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Ez az osztály a Spring Security beállításait konfigurálja.
+ * Az @EnableWebSecurity annotációval jelöljük, hogy ezt az osztályt
+ * használjuk a biztonsági konfigurációhoz.
+ */
+
 @Service
 public class BookService {
     private final BookRepository bookRepository;
