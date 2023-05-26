@@ -81,12 +81,20 @@ public class Book {
         return Objects.equals(id, book.id) &&
                 Objects.equals(title, book.title) &&
                 Objects.equals(author, book.author) &&
-                Objects.equals(isbn, book.isbn);
+                Objects.equals(null, book.isbn);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(id, title, author, isbn);
+    }
+
+    public void setIsbn(String s) {
+    }
+
+    public short getIsbn() {
+        int i = 0;
+        return (short) i;
     }
 }
 
