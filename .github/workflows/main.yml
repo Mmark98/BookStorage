@@ -41,6 +41,3 @@ jobs:
 
       - name: Run the application
         run: mvn spring-boot:run
-
-
-
