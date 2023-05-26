@@ -32,8 +32,8 @@ jobs:
           # Push version to env
           echo "ARTIFACT_VERSION=$version" >> $GITHUB_ENV
           # Overwrite local artifact version
-          mvn -B versions:set -DnewVersion="$version" --file pom.xml
-          mvn -B deploy --file pom.xml
+          mvn -B versions:set -DnewVersion="$version" --file /home/runner/work/BookStorage/library/pom.xml  
+          mvn -B deploy --file  /home/runner/work/BookStorage/library/pom.xml 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Log in to the Container registry
