@@ -110,7 +110,7 @@
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.8.7</version>
+				<version>0.8.10</version>
 				<executions>
 					<execution>
 						<id>prepare-agent</id>
@@ -138,11 +138,9 @@
 					<excludes>
 						<exclude>com\example\library\model\**</exclude>
 						<exclude>com\example\library\Controller\**</exclude>
-						<exclude>com\example\library\LibraryApplication.class</exclude>
 						<exclude>com\example\library\repository\**</exclude>
 						<exclude>com\example\library\service\**</exclude>
 						<exclude>com\example\library\exception\**</exclude>
-						<exclude>*Test</exclude>
 					</excludes>
 					<rules>
 						<rule>
