@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="10.9.3">
-<file name="D:\saját\Nyíregyházi egytem\BSC NYE\prog_korny\BookStorage\library\src\main\java\com\example\library\config\EnableWebSecurity.java">
-</file>
 <file name="D:\saját\Nyíregyházi egytem\BSC NYE\prog_korny\BookStorage\library\src\main\java\com\example\library\config\SecurityConfig.java">
 <error line="19" column="5" severity="warning" message="&apos;method def modifier&apos; has incorrect indentation level 4, expected level should be 2." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
 <error line="23" column="9" severity="warning" message="&apos;method def&apos; child has incorrect indentation level 8, expected level should be 4." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
@@ -69,8 +67,6 @@
 <error line="12" column="9" severity="warning" message="&apos;ctor def&apos; child has incorrect indentation level 8, expected level should be 4." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
 <error line="13" column="5" severity="warning" message="&apos;ctor def rcurly&apos; has incorrect indentation level 4, expected level should be 2." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
 </file>
-<file name="D:\saját\Nyíregyházi egytem\BSC NYE\prog_korny\BookStorage\library\src\main\java\com\example\library\repository\BookRepository.java">
-</file>
 <file name="D:\saját\Nyíregyházi egytem\BSC NYE\prog_korny\BookStorage\library\src\main\java\com\example\library\service\BookService.java">
 <error line="7" column="1" severity="warning" message="Extra separation in import group before &apos;java.util.List&apos;" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
 <error line="7" column="1" severity="warning" message="Wrong lexicographical order for &apos;java.util.List&apos; import. Should be before &apos;org.springframework.stereotype.Service&apos;." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
@@ -111,7 +107,5 @@
 <error line="75" column="5" severity="warning" message="&apos;method def modifier&apos; has incorrect indentation level 4, expected level should be 2." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
 <error line="76" column="9" severity="warning" message="&apos;method def&apos; child has incorrect indentation level 8, expected level should be 4." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
 <error line="77" column="5" severity="warning" message="&apos;method def rcurly&apos; has incorrect indentation level 4, expected level should be 2." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
-</file>
-<file name="D:\saját\Nyíregyházi egytem\BSC NYE\prog_korny\BookStorage\library\src\main\resources\application.properties">
 </file>
 </checkstyle>

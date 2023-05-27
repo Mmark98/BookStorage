@@ -21,6 +21,10 @@
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>classworlds</groupId>
@@ -99,7 +103,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>3.1.0</version>
 				<configuration>
-					<mainClass>com.example.library</mainClass>
+					<mainClass>com.example.library.LibraryApplication</mainClass>
 				</configuration>
 			</plugin>
 			<plugin>
