@@ -18,4 +18,4 @@ jobs:
 
       - name: Build with Maven
         run: mvn clean install
-        working-directory: ./library
+        working-directory: library
