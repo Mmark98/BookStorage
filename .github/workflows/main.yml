@@ -18,4 +18,4 @@ jobs:
 
       - name: Build with Maven
         run: mvn clean install
-        working-directory: ./home/runner/work/BookStorage/library/pom.xml
+        working-directory: ./library
