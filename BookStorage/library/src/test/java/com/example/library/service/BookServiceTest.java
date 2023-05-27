@@ -1,55 +1,60 @@
 package com.example.library.service;
 
 import com.example.library.model.Book;
+import com.example.library.repository.BookRepository;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.mockito.Mockito;
+
+import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.mockito.BDDMockito.given;
 
+public class BookServiceTest {
+    private BookService bookService;
+    private BookRepository bookRepository;
 
-/* void save() {*/
-    @SpringBootTest
-    public class BookServiceTest {
-      /* @Test
-       void findAll() {
-       }*/
-
-
-        @Autowired
-        private BookService bookService;
-
-        @Test
-        protected void testAddBook() {
-            Book book = new Book();
-            book.setTitle("Teszt Konyv");
-            book.setAuthor("Teszt Szerzo");
-            book.setIsbn("123-456-789");
-
-            Book savedBook = bookService.save(book);
-
-            assertNotNull(savedBook.getId());
-            assertEquals(book.getTitle(), savedBook.getTitle());
-            assertEquals(book.getAuthor(), savedBook.getAuthor());
-            assertEquals(book.getIsbn(), savedBook.getIsbn());
-        }
-
-        // Hasznos lehet további teszteseteket is írni, mint például:
-        // - teszt a findById() metódushoz: mi történik, ha létező és nem létező ID-val hívod meg?
-        // - teszt a delete() metódushoz: mi történik, ha létező és nem létező ID-val hívod meg?
-
-
-   /* @Test
-    void findById() {
+    @BeforeEach
+    public void setup() {
+        bookRepository = Mockito.mock(BookRepository.class);
+        bookService = new BookService(bookRepository);
     }
 
     @Test
-    void update() {
+    public void findAllTest() {
+        // Given
+        Book book1 = new Book(1L, "Title", "Author", "ISBN");
+        book1.setId(1L);
+        book1.setName("Book 1");
+
+        Book book2 = new Book(1L, "Title", "Author", "ISBN");
+        book2.setId(2L);
+        book2.setName("Book 2");
+
+        given(bookRepository.findAll()).willReturn(Arrays.asList(book1, book2));
+
+        // When
+        List<Book> result = bookService.findAll();
+
+        // Then
+        assertEquals(2, result.size());
+        assertEquals(book1, result.get(0));
+        assertEquals(book2, result.get(1));
     }
 
     @Test
-    void delete() {
+    public void saveTest() {
+        // Given
+        Book book = new Book(1L, "Title", "Author", "ISBN");
+        book.setId(3L);
+        book.setName("Book 3");
 
-    }*/
+        // When
+        Book result = bookService.save(book);
+
+        // Then
+        assertEquals(book, result);
     }
+}

@@ -24,26 +24,39 @@ public class Book {
     private String author;
     private Object isbn;
 
-    public Book() {
+    public Book(long l, String title, String author, String isbn) {
 
     }
 
-    public void setId(Long id) {this.id = id;
+    public Book(Long id, String title, String author, String isbn) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.isbn = isbn;
     }
 
-    public Long getId() {return id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getTitle() {return title;
+    public Long getId() {
+        return id;
     }
 
-    public void setTitle(String title) {this.title = title;
+    public String getTitle() {
+        return title;
     }
 
-    public String getAuthor() {return author;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public void setAuthor(String author) {this.author = author;
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     @Override
@@ -79,6 +92,9 @@ public class Book {
 
     public void setIsbn(String s) {
 
+    }
+
+    public void setName(String s) {
     }
 }
 
