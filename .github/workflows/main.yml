@@ -16,5 +16,5 @@ jobs:
         distribution: 'adopt'
 
     - name: Build with Maven
-      run: mvn -B clean install
+      run: mvn clean install
       working-directory: /home/runner/work/BookStorage/library
