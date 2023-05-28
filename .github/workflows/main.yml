@@ -21,7 +21,7 @@ jobs:
 
       - name: Build and publish with Maven
         run: |
-          ls -l
+          cd BookStorage && ls -l
           env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -38,11 +38,6 @@ jobs:
 
       - name: Test with Maven and generate Jacoco report
         run: mvn test jacoco:report
-
-      - name: Run SonarQube Scanner
-        uses: sonarsource/sonarqube-scan-action@master
-        with:
-          projectBaseDir: .
 
       - name: Run the application
         run: mvn spring-boot:run
