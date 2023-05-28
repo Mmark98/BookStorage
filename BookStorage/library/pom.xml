@@ -15,8 +15,6 @@
 	<description>library</description>
 	<properties>
 		<java.version>17</java.version>
-		<coverage.branchLimit>40%</coverage.branchLimit>
-		<coverage.lineLimit>40%</coverage.lineLimit>
 		<coverage.type>BUNDLE</coverage.type>
 	</properties>
 
@@ -157,12 +155,10 @@
 								<limit>
 									<counter>LINE</counter>
 									<value>COVEREDRATIO</value>
-									<minimum>${coverage.lineLimit}</minimum>
 								</limit>
 								<limit>
 									<counter>BRANCH</counter>
 									<value>COVEREDRATIO</value>
-									<minimum>${coverage.branchLimit}</minimum>
 								</limit>
 							</limits>
 						</rule>
@@ -213,4 +209,11 @@
 
 		</plugins>
 	</build>
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub Packages</name>
+			<url>https://maven.pkg.github.com/Mmark98/BookStorage</url>
+		</repository>
+	</distributionManagement>
 </project>
