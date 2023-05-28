@@ -2,9 +2,9 @@ name: Java CI
 
 on:
   push:
-    branches: [ master ]
+    branches:  [Mmark98-patch-1]
   pull_request:
-    branches: [ master ]
+    branches: [Mmark98-patch-1]
 
 jobs:
   build:
@@ -19,8 +19,20 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
 
-      - name: Build with Maven
-        run: cp pom.xml && mvn clean install
+      - name: Build and publish with Maven
+        run: |
+          # Versioning setup
+          version_prefix=`mvn help:evaluate -Dexpression=project.version --quiet -DforceStdout --file pom.xml | awk -F. '{print $1"."$2}'`
+          version="$version_prefix.${{github.run_number}}"
+          echo "Setting artifact version to $version"
+          # Push version to env
+          echo "ARTIFACT_VERSION=$version" >> $GITHUB_ENV
+          # Overwrite local artifact version
+          mvn -B versions:set -DnewVersion="$version" --file pom.xml
+          mvn -B deploy --file pom.xml
+           cp "library/target/library-${version}.jar" "library/target/library-0.0.1-SNAPSHOT.jar"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Cache Maven packages
         uses: actions/cache@v2
