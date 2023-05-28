@@ -18,10 +18,20 @@ jobs:
         with:
           java-version: '17'
           distribution: 'adopt'
-
       - name: Build and publish with Maven
         run: |
-            cd  
+          # Versioning setup
+          version_prefix=`mvn help:evaluate -Dexpression=project.version --quiet -DforceStdout --file pom.xml | awk -F. '{print $1"."$2}'`
+          version="$version_prefix.${{github.run_number}}"
+          echo "Setting artifact version to $version"
+          # Push version to env
+          echo "ARTIFACT_VERSION=$version" >> $GITHUB_ENV
+          # Overwrite local artifact version
+          mvn -B versions:set -DnewVersion="$version" --file pom.xml
+          mvn -B deploy --file pom.xml
+
+           cp "library/target/library-${version}.jar" "library/target/library-0.0.1-SNAPSHOT.jar"        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
 
       - name: Cache Maven packages
         uses: actions/cache@v2
@@ -29,13 +39,6 @@ jobs:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
-
-
-      - name: Test with Maven
-        run: mvn test
-
-      - name: Test with Maven and generate Jacoco report
-        run: mvn test jacoco:report
 
       - name: Run the application
         run: mvn spring-boot:run
