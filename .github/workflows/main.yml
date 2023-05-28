@@ -21,7 +21,7 @@ jobs:
 
       - name: Build and publish with Maven
         run: |
-            ls -l
+            cd  
 
       - name: Cache Maven packages
         uses: actions/cache@v2
