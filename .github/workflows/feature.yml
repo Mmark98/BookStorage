@@ -38,8 +38,7 @@ jobs:
           # Overwrite local artifact version
           mvn -B versions:set -DnewVersion="$version" --file pom.xml
           mvn -B deploy --file pom.xml
-           cp "library/target/library-${version}.jar" "library/target/library.jar"
-        env:
+          env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Log in to the Container registry
         uses: docker/login-action@v2
@@ -47,7 +46,3 @@ jobs:
           registry: ${{ env.DOCKER_REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build and push Docker image
-        run: |
-          docker build . -t ${{ env.DOCKER_REGISTRY }}/${{ env.DOCKER_IMAGE_NAME }}:${{ env.ARTIFACT_VERSION }}
-          docker push ${{ env.DOCKER_REGISTRY }}/${{ env.DOCKER_IMAGE_NAME }}:${{ env.ARTIFACT_VERSION }}
